@@ -17,7 +17,7 @@ async function generateURL(req,res){
 async function getAnalytics(req,res){
     const shortId=req.params.shortId;
     //console.log(shortId);
-    //if(!shortId) return res.status(400).json({error:"shortID is required"})
+    if(!shortId) return res.status(400).json({error:"shortID is required"})
 
     const result =await URL.findOne({shortId});
     return res.json({
